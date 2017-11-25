@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 import service.AddressService;
 
 @Controller
@@ -90,4 +92,12 @@ public class AddressController {
         return "redirect:/address/getListAddress";
     }
 
+
+    @RequestMapping(value="/delete/{id}")
+    public String delete(@PathVariable("id") Long id){
+        Address address = new Address();
+        address.setId(id);
+        this.addressService.remove(address);
+        return "redirect:/address/getListAddress";
+    }
 }

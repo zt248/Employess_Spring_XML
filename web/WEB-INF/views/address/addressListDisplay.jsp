@@ -12,6 +12,7 @@
     <th>city</th>
     <th>street</th>
     <th>postCode</th>
+    <th>Delete</th>
     <c:forEach items="${listAddress}" var="address">
         <tr>
             <td>${address.id}</td>
@@ -19,6 +20,7 @@
             <td>${address.city}</td>
             <td>${address.street}</td>
             <td>${address.postCode}</td>
+            <td><a href="<c:url value="/delete/${address.id}"/>">Delete</a> </td>
         </tr>
     </c:forEach>
 
