@@ -14,14 +14,14 @@ public class Main {
 //        AddressServiceImpl addressService = (AddressServiceImpl) context.getBean("employeeServiceImpl");
 
         Address address = new Address();
-        address.setCountry("Belarus");
-        address.setCity("Minsk");
-        address.setStreet("Fogela 1E");
+        address.setCountry("Беларусь");
+        address.setCity("Молодечно");
+        address.setStreet("Центральная");
         address.setPostCode("222417");
 
 
 
-//        addressImplDao.add(address);
+        addressImplDao.add(address);
 
 //        System.out.println(addressImplDao.getById(1L));
 
